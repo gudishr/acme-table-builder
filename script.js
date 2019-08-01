@@ -11,8 +11,11 @@ class TableBuilder {
   }
 
   render() {
-    const th1 = `<th> ${this.columnHeader} </th>`
-    document.querySelector(this.selector).innerHTML = html;
+    const tableHeaders = this.columnHeader.map(header => `<th id='${header.key}'> ${header.title} </th>`)
+    document.querySelector(this.selector).innerHTML = tableHeaders;
+
+    // const tableData = this.data.map(emp => `<td>${emp.name}</td>`)
+    // document.querySelector(this.selector).innerHTML = tableData
   }
 
 }
